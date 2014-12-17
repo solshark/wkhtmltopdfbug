@@ -9,6 +9,6 @@ Router.route 'pdf',
   path: 'pdf'
   where: 'server'
   action: ->
-    url = '/'
+    url = Meteor.absoluteUrl()
     r = wkhtmltopdf url, pageSize: 'A4'
       .pipe @response
